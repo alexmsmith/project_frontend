@@ -1,0 +1,36 @@
+<!-- <h3>{{ hero.name | uppercase }}</h3>
+<h4>{{ hero.powers }}</h4>
+
+<div>
+    <label>Name:
+        <input [(ngModel)]='hero.name' placeholder='name'/>
+    </label><br><br>
+    <label>Powers:
+        <input [(ngModel)]='hero.powers' placeholder='powers'/>
+    </label>
+</div> -->
+
+<h2>My Data</h2>
+<div>
+    <button (click)="loadData()">Load profile</button>
+    {{ test | json }}
+</div>
+<!-- <ul class='heroes'>
+    <li *ngFor='let hero of heroes' (click)='onSelect(hero)'>
+        <h4>{{ hero.name | uppercase }}</h4>
+        <p>{{ hero.power }}</p>
+    </li>
+</ul> -->
+<!--
+<div *ngIf="selectedHero">
+    <h2>{{ selectedHero.name | uppercase }} Details</h2>
+    <div><span>id: </span>{{ selectedHero.id }}</div>
+    <div>
+        <label>Name:
+            <input [(ngModel)]='selectedHero.name' placeholder='name'/>
+        </label><br><br>
+        <label>Powers:
+            <input [(ngModel)]='selectedHero.power' placeholder='power'/>
+        </label>
+    </div>
+</div> -->

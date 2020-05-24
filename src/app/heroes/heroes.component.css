@@ -1,0 +1,13 @@
+.heroes li {
+    background-color: #333;
+    color: white;
+    border-radius: 4px;
+    margin: 10px;
+    text-align: center;
+    width: 250px;
+    height: 250px;
+}
+
+p {
+    color: white;
+}

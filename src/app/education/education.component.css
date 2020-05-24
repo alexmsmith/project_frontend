@@ -1,0 +1,10 @@
+education {
+    width: 50%;
+    display: block;
+    float: left;
+}
+
+education textarea {
+    width: 95%;
+    height: 200px;
+}
