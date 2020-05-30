@@ -1,0 +1,21 @@
+<!-- <app-container></app-container> -->
+<div class="container">
+    <h1>Register</h1>
+    <form class="example-form" #f="ngForm" (ngSubmit)="createUser(f)">
+        <mat-form-field class="example-full-width">
+          <mat-label>Fullname</mat-label>
+          <input matInput placeholder="Fullname" name="name" ngModel>
+        </mat-form-field><br>
+        <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" name="email" ngModel>
+        </mat-form-field><br>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Password" name="password" ngModel>
+        </mat-form-field><br>
+        <mat-card-actions>
+            <button mat-raised-button type="submit">Register</button>
+        </mat-card-actions>
+      </form>
+</div>

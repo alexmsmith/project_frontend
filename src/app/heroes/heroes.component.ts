@@ -12,11 +12,12 @@ import { catchError, retry } from 'rxjs/operators';
 })
 export class HeroesComponent implements OnInit {
   constructor(private testService: TestService) {}
-  test = {};
+  // test = {};
+  test = this.testService.getData().subscribe(data => this.test = data);
 
-  loadData() {
-    this.testService.getData().subscribe(data => this.test = data);
-  }
+  // loadData() {
+  //   this.testService.getData().subscribe(data => this.test = data);
+  // }
   
 
   // getHeroes(): void {

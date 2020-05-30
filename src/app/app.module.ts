@@ -6,34 +6,56 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
+// Angular Forms
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+
 import { AppComponent } from './app.component';
 import { BioComponent } from './bio/bio.component';
 // Contains both the education and workexperience component.
-import { ContainerComponent } from './container/container.component';
 import { EducationComponent } from './education/education.component';
 import { WorkexperienceComponent } from './workexperience/workexperience.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { LogoComponent } from './logo/logo.component';
 
 import { HeroesComponent } from './heroes/heroes.component';
+import { AppRoutingModule } from './app-routing.module';
+import { LoginComponent } from './login/login.component';
+import { ContainerComponent } from './container/container.component';
+import { ProfileComponent } from './profile/profile.component';
+import { RegisterComponent } from './register/register.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
     BioComponent,
-    ContainerComponent,
     EducationComponent,
     WorkexperienceComponent,
     ProjectsComponent,
     LogoComponent,
     HeroesComponent,
-    NavBarComponent
+    NavBarComponent,
+    LoginComponent,
+    ContainerComponent,
+    ProfileComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     // import HttpClientModule after BrowserModule
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
