@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Education } from './education';
 
 @Component({
   selector: 'app-education',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EducationComponent implements OnInit {
 
-  education = "Machine Learning and Predictive Analytics, Big Data, Digital Design and Development, Project Management, Software Development Group Project, Information Security, IT Strategy and Governance. As a Student Representative for MSc IT, I support the Student’s wellbeing, helping and guiding them along their studies.";
+  educations: Array<Education> = [];
+
+  addEducation() {
+    this.educations.push({id: 1, education: 'test'});
+  }
+
+  // educationSelected = false;
+  // addEducation() {
+  //   this.educationSelected = true;
+  // }
 
   constructor() { }
 

@@ -1,4 +1,5 @@
 <workexperience>
     <h3>WORK EXPERIENCE</h3>
-    <textarea>{{ workexperience }}</textarea>
+    <textarea *ngFor="let w of workexperiences"></textarea>
+    <button (click)="addWorkExperience()">Add Work Experience</button>
 </workexperience>

@@ -1,4 +1,8 @@
 <education>
     <h3>EDUCATION</h3>
-    <textarea>{{ education }}</textarea>
+    <textarea *ngFor="let e of educations"></textarea>
+    <button (click)="addEducation()">Add Education</button>
+    <!-- <div *ngIf="educationSelected">
+        <textarea>{{ education }}</textarea>
+    </div> -->
 </education>

@@ -1,4 +1,5 @@
 <projects>
     <h3>PROJECTS</h3>
-    <textarea>{{ projects }}</textarea>
+    <textarea *ngFor="let p of projects"></textarea>
+    <button (click)="addProject()">Add Project</button>
 </projects>
