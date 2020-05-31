@@ -29,6 +29,12 @@ import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { JwtHelperService, JWT_OPTIONS  } from '@auth0/angular-jwt';
+
+// Cookie Service
+import { CookieService } from 'ngx-cookie-service';
+import { httpInterceptProviders } from './http-interceptors';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,9 +61,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
   ],
-  providers: [],
+  providers: [ 
+    httpInterceptProviders, 
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

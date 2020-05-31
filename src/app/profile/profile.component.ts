@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth-service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-profile',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  constructor (private authService: AuthService) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  // Demo Fetch Data.
+  fetch() {
+    // this.authService.fetch(localStorage.getItem('auth_token'))
+    this.authService.fetch(localStorage.getItem('auth_token'))
+      // .subscribe( data => console.log(data) );
+      .subscribe (
+        (data) => {
+          console.log(data);
+        }
+      )
   }
+
+  ngOnInit(): void {}
 
 }
