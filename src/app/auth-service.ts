@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const API_URL = 'http://project-api.ddns.net/api/user/login';
 
@@ -11,9 +11,9 @@ export class AuthService {
   
   constructor(private http: HttpClient, private jwtHelper: JwtHelperService) {}
 
-  token = localStorage.getItem('auth_token');
-  fetch(token: string) {
-    // return this.http.post<any>('http://project-api.ddns.net/api/user/get', { token });
+  // Get this working with Mike.
+  
+  fetch() {
     return this.http.get('http://project-api.ddns.net/api/user/get');
   }
 
@@ -23,7 +23,6 @@ export class AuthService {
 
   isAuthenticated(): boolean {
     const token = localStorage.getItem('auth_token');
-
     // Check whether the token is expired and return true or false
     return !this.jwtHelper.isTokenExpired(token);
   }
