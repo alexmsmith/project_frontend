@@ -3,6 +3,8 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const API_URL = 'http://project-api.ddns.net/api/user/login';
+const REGISTER_API_URL = 'http://project-api.ddns.net/api/user/create';
+const LOGOUT_API_URL = 'http://project-api.ddns.net/api/user/logout';
 
 @Injectable({
   providedIn: 'root'
@@ -10,15 +12,22 @@ const API_URL = 'http://project-api.ddns.net/api/user/login';
 export class AuthService {
   
   constructor(private http: HttpClient, private jwtHelper: JwtHelperService) {}
-
-  // Get this working with Mike.
   
   fetch() {
     return this.http.get('http://project-api.ddns.net/api/user/get');
   }
 
+  // Post request to create user api.
+  register(name:string, email:string, password:string) {
+    return this.http.post<any>(REGISTER_API_URL, { name: name, email: email, password: password });
+  }
+
   login(email:string, password:string) {
     return this.http.post<any>(API_URL, { email, password });
+  }
+
+  logout() {
+    return this.http.post<any>(LOGOUT_API_URL, {});
   }
 
   isAuthenticated(): boolean {

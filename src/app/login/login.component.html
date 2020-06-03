@@ -1,8 +1,10 @@
 <!-- <app-container></app-container> -->
-<div class="container">
+<header>
     <h1>Login</h1>
+</header>
+<div class="container">
     <form class="example-form" #f="ngForm" (ngSubmit)="onSubmit(f)">
-        <mat-form-field class="example-full-width">
+        <mat-form-field>
             <mat-label>Email</mat-label>
             <input matInput placeholder="Email" name="email" ngModel>
         </mat-form-field><br>
@@ -13,14 +15,8 @@
         <mat-card-actions>
             <button mat-raised-button type="submit">Login</button>
         </mat-card-actions>
-      </form>
-
-    <a routerLink="/register">Register</a>
-
-    
-    <!-- <ul>
-        <li *ngFor="let t of test">
-            {{ t.name }} {{ t.id }}
-        </li>
-    </ul> -->
+        <mat-card-actions>
+            <button mat-raised-button routerLink="/register">Register</button>
+        </mat-card-actions>
+    </form>
 </div>

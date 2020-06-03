@@ -6,7 +6,8 @@
         <li><a href="#">page4</a></li>
     </ul>
     <ul id="bottom-nav">
-        <li><a href="#"><fa-icon [icon]="['fas', 'bell']"></fa-icon></a></li>
+        <!-- <li><a href="#"><fa-icon [icon]="['fas', 'bell']"></fa-icon></a></li> -->
         <li><a routerLink="/login">Sign-In</a></li>
+        <li (click)="logout()">Logout</li>
     </ul>
 </nav>

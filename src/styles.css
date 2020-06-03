@@ -1,31 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
 * {
     font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
+    margin: 0;
     padding: 0;
-    margin: 0;
+    box-sizing: border-box;
 }
 
-h1 {
-    color: #333;
-    font-size: 250%;
-    margin: 0;
-    padding-top: 50px;
+header {
+    font-size: 1.5rem;
 }
 
-p {
+header,.container {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #333;
+}
+mat-card-actions {
+    margin: 8px;
 }
 
 textarea {
     width: 100%;
     height: 100px;
     padding: 5px;
-}
-
-.container {
-    text-align: center;
-    float: center;
+    resize: none;
 }

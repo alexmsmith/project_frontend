@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import { elementEventFullName } from '@angular/compiler/src/view_compiler/view_compiler';
 
-// const API_URL = 'http://localhost:8000/registeredUsers';
-const API_URL = 'http://project-api.ddns.net/api/user/create';
+import { AuthService } from '../auth-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -12,19 +12,21 @@ const API_URL = 'http://project-api.ddns.net/api/user/create';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  test = {};
 
-  constructor(private http: HttpClient) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   createUser(f: NgForm) {
-    const name = f.value.name;
-    const email = f.value.email;
-    const password = f.value.password;
+    this.authService.register(f.value.name, f.value.email, f.value.password)
+      .subscribe(
+        // (newRegisterAttempt) => {
+        () => {
+          // console.log(newRegisterAttempt);
+          // localStorage.setItem('auth_token', newRegisterAttempt.access_tocken);
+          // Re-redirect to user's profile upon successful register.
+          this.router.navigate(['/profile']);
+        }
+      )
 
-    console.log(f);
-
-    // Post request to create user api.
-    this.http.post<any>(API_URL, { name: name, email: email, password: password }).subscribe(data => this.test = data);
   }
 
   ngOnInit(): void {

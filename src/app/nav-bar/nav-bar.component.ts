@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-
-library.add(fas);
+import { AuthService } from '../auth-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -12,7 +10,19 @@ library.add(fas);
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() {}
+  constructor(private authService: AuthService, private router: Router) {}
+
+  // Logout Function
+  logout() {
+    this.authService.logout()
+      .subscribe(
+        () => {
+          localStorage.removeItem('auth_token');
+          // Re-direct to the login screen.
+          this.router.navigate(['/login']);
+        }
+      )
+  }
 
   ngOnInit(): void {
   }

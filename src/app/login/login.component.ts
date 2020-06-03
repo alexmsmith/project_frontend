@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         (newLoginAttempt) => {
           console.log(newLoginAttempt);
-          localStorage.setItem('auth_token', newLoginAttempt.access_tocken);
+          localStorage.setItem('auth_token', newLoginAttempt.token);
           // Re-direct to user's profile upon successful login.
           this.router.navigate(['/profile']);
         }
