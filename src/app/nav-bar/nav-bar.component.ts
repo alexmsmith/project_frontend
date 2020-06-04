@@ -12,6 +12,14 @@ export class NavBarComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router) {}
 
+  isLoggedIn(): boolean {
+    if (localStorage.getItem('auth_token')===null || localStorage.getItem('auth_token')==='undefined') {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   // Logout Function
   logout() {
     this.authService.logout()

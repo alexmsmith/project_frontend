@@ -1,7 +1,7 @@
-<header>
-    <h1>Register</h1>
-</header>
 <div class="container">
+    <header>
+        <h1>Register</h1>
+    </header>
     <form class="example-form" #f="ngForm" (ngSubmit)="createUser(f)">
         <mat-form-field class="example-full-width">
           <mat-label>Fullname</mat-label>
@@ -19,4 +19,5 @@
             <button mat-raised-button type="submit">Register</button>
         </mat-card-actions>
       </form>
+      <a class="signin-link" routerLink="/login">Sign-In</a>
 </div>

@@ -1,0 +1,25 @@
+.container {
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+header {
+    padding: 30px;
+}
+
+form {
+    text-align: center;
+}
+
+.register-link {
+    margin: 30px;
+    color: #333;
+    text-decoration: none;
+}
+.register-link:hover {
+    color: black;
+}

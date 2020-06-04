@@ -1,8 +1,8 @@
 <!-- <app-container></app-container> -->
-<header>
-    <h1>Login</h1>
-</header>
 <div class="container">
+    <header>
+        <h1>Login</h1>
+    </header>
     <form class="example-form" #f="ngForm" (ngSubmit)="onSubmit(f)">
         <mat-form-field>
             <mat-label>Email</mat-label>
@@ -15,8 +15,6 @@
         <mat-card-actions>
             <button mat-raised-button type="submit">Login</button>
         </mat-card-actions>
-        <mat-card-actions>
-            <button mat-raised-button routerLink="/register">Register</button>
-        </mat-card-actions>
     </form>
+    <a class="register-link" routerLink="/register">Need to register?</a>
 </div>

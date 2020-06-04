@@ -6,11 +6,15 @@
     box-sizing: border-box;
 }
 
+.material-icons {
+    font-size: 34px;
+}
+
 header {
     font-size: 1.5rem;
 }
 
-header,.container {
+.container {
     min-height: 20vh;
     display: flex;
     justify-content: center;
