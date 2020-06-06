@@ -1,0 +1,28 @@
+header {
+    padding-top: 40px;
+}
+.header-content {
+    overflow: hidden;
+    width: 800px;
+    position: relative;
+    left: 120px;
+    border-bottom: 2px solid rgb(224, 224, 224);
+    border-radius: 4px;
+    padding: 15px 50px 15px 15px;
+}
+.header-content-logo-name {
+    float: left;
+}
+.users-name {
+    float: left;
+    padding-top: 120px;
+}
+.users-description {
+    clear: both;
+    font-size: 1.2rem;
+    padding-top: 18px;
+}
+.users-location {
+    font-size: 1.2rem;
+    padding-top: 18px;
+}

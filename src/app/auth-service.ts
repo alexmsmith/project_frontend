@@ -13,9 +13,9 @@ export class AuthService {
   
   constructor(private http: HttpClient, private jwtHelper: JwtHelperService) {}
   
-  fetch() {
-    return this.http.get('http://project-api.ddns.net/api/user/get');
-  }
+  // fetch() {
+  //   return this.http.get('http://project-api.ddns.net/api/user/get');
+  // }
 
   // Post request to create user api.
   register(name:string, email:string, password:string) {

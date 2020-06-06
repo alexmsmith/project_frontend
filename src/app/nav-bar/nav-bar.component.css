@@ -1,7 +1,6 @@
 nav {
     background-color: #333;
     color: white;
-    width: 65px;
     position: fixed;
     height: 100%;
 }
@@ -24,5 +23,4 @@ nav ul li a:hover {
 #bottom-nav {
     position: absolute;
     bottom: 0;
-    width: 99%;
 }

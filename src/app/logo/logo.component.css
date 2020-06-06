@@ -1,6 +1,12 @@
-#logo {
+/* .logo {
     border: 1px solid red;
     width: 45px;
     height: 45px;
     float: left;
+} */
+img {
+    width: 160px;
+    height: 160px;
+    float: left;
+    border-radius: 50%;
 }

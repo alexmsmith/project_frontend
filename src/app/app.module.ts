@@ -27,13 +27,18 @@ import { LoginComponent } from './login/login.component';
 import { ContainerComponent } from './container/container.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
+
+// Each section component will have a section content component.
+import { SectionComponent } from './section/section.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { JwtHelperService, JWT_OPTIONS  } from '@auth0/angular-jwt';
 
-// Cookie Service
-import { CookieService } from 'ngx-cookie-service';
+// Http Interception.
 import { httpInterceptProviders } from './http-interceptors';
+import { SectionContentComponent } from './section-content/section-content.component';
+
 
 @NgModule({
   declarations: [
@@ -48,7 +53,9 @@ import { httpInterceptProviders } from './http-interceptors';
     LoginComponent,
     ContainerComponent,
     ProfileComponent,
-    RegisterComponent
+    RegisterComponent,
+    SectionComponent,
+    SectionContentComponent
   ],
   imports: [
     BrowserModule,
