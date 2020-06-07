@@ -12,19 +12,12 @@ export class ProfileComponent implements OnInit {
   user = JSON.parse(localStorage.getItem('user'));
   name = this.user.name;
 
-  // sections = ['Work Experience', 'Academic', 'Projects'];
+  user_id = this.user['id'];
+  profile_data;
 
-  // Demo Fetch Data.
-  fetch() {
-    this.authService.fetch()
-      // .subscribe( data => console.log(data) );
-      .subscribe (
-        (data) => {
-          console.log(data);
-        }
-      )
+  ngOnInit(): void {
+    this.authService.fetch(this.user_id)
+      .subscribe (data => this.profile_data = data)
   }
-
-  ngOnInit(): void {}
 
 }

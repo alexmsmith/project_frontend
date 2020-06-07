@@ -13,17 +13,19 @@ export class AuthService {
   
   constructor(private http: HttpClient, private jwtHelper: JwtHelperService) {}
   
-  // fetch() {
-  //   return this.http.get('http://project-api.ddns.net/api/user/get');
-  // }
+  fetch(id:string) {
+    return this.http.post<any>('http://localhost:8000/api/profile', { id : id });
+  }
 
   // Post request to create user api.
   register(name:string, email:string, password:string) {
     return this.http.post<any>(REGISTER_API_URL, { name: name, email: email, password: password });
+    // return this.http.post<any>('http://localhost:8000/api/user/create', { name: name, email: email, password: password});
   }
 
   login(email:string, password:string) {
     return this.http.post<any>(API_URL, { email, password });
+    // return this.http.post<any>('http://localhost:8000/api/user/login', { email, password })
   }
 
   logout() {

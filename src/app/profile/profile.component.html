@@ -4,11 +4,9 @@
         <div class="header-content">
             <app-logo></app-logo>
             <h2 class="users-name">{{ name }}</h2>
-            <p class="users-description">MSc Information Technology Student</p>
-            <p class="users-location">Taunton, United Kingdom</p>
+            <p class="users-description">{{ profile_data.title }}</p>
+            <p class="users-location">{{ profile_data.address }}</p>
         </div>
     </header>
-
-    <app-section></app-section>
-    <!-- <button (click)="fetch()">Fetch</button> -->
+    <app-section [content]='profile_data'></app-section>
 <!-- </div> -->

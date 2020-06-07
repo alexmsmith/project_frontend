@@ -1,5 +1,4 @@
 <div class='section-container'>
-    
     <div class='section' *ngFor='let section of sections'>
         <h3 class='section-header'>{{ section['section-name'] }}</h3>
         <app-section-content [sectionContent]='section["section-content"]'></app-section-content>
